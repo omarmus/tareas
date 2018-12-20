@@ -1,29 +1,31 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div class="home" id="app">
+    <div class="header">📚<em>Vuello</em></div>
+    <Listado />
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+// @ is an alias to /src
+import Listado from '@/components/Listado.vue'
+
+export default {
+  name: 'home',
+  components: {
+    Listado
   }
+}
+</script>
+
+<style lang="scss">
+@import 'assets/scss/index.scss';
+.header {
+  background-color: darken($info, 15%);
+  color: lighten($info, 20%);
+  height: 40px;
+  line-height: 40px;
+  font-size: 1.3rem;
+  text-align: center;
+  font-weight: 600;
 }
 </style>

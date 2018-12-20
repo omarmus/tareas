@@ -1,0 +1,15 @@
+@import 'normalize.scss';
+@import '_button.scss';
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: $info;
+}
+
+.grid {
+  display: grid;
+}
+
+.p-0 {
+	padding: 0 !important;
+}
