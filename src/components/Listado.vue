@@ -216,6 +216,11 @@ $bgContainer: #DFE3E6;
 
   .tasks-list {
     padding: 0 8px;
+
+    label {
+      padding: 9px 0;
+      display: block;
+    }
   }
 
   .tasks-container {
