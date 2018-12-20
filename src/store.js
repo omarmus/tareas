@@ -10,6 +10,10 @@ export default new Vuex.Store({
   },
   mutations: {
     addTask (state, task) {
+      console.log('yaasassas', task)
+      if (!state.tasks) {
+        state.tasks = []
+      }
       state.tasks.push(task)
       Storage.set('tasks', state.tasks)
     },
@@ -30,14 +34,17 @@ export default new Vuex.Store({
   },
   getters: {
     getId (state) {
-      let id = 0
-      state.tasks.map(item => {
-        if (item.id > id) {
-          id = item.id
-        }
-      })
+      if (state.tasks) {
+        let id = 0
+        state.tasks.map(item => {
+          if (item.id > id) {
+            id = item.id
+          }
+        })
 
-      return id + 1
+        return id + 1
+      }
+      return 1
     },
     getTaskById: (state) => (id) => {
       return state.tasks.find(task => task.id === id)
